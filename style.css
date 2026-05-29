@@ -1,0 +1,217 @@
+body {
+    background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+
+    animation: bgMove 8s ease infinite;
+
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+
+    font-family: sans-serif;
+
+}
+
+h1 {
+    font-size: 60px;
+    color: white;
+    text-shadow:
+        0 0 5px pink,
+        0 0 10px hotpink,
+        0 0 20px deeppink;
+
+    margin-bottom: 30px;
+
+    position: relative;
+    z-index: 10;
+
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+button {
+    padding: 15px 30px;
+
+    font-size: 24px;
+
+    border: none;
+    border-radius: 15px;
+
+    background-color: white;
+    color: hotpink;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    position: relative;
+    z-index: 10;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.balloon {
+    position: absolute;
+
+    bottom: -150px;
+
+    width: 100px;
+    height: 120px;
+
+    border-radius: 50%;
+
+    animation: float 8s ease-in-out infinite;
+
+    z-index: 1;
+
+    animation-timing-function: linear;
+}
+
+.balloon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 2px;
+    height: 100px;
+
+    background-color: white;
+
+    top: 120px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(0px) translateY(0);
+    }
+
+    50% {
+        transform: translateX(15px) translateY(-60vh);
+    }
+
+    100% {
+        transform: translateX(-20px) translateY(-120vh);
+    }
+}
+
+.balloon1 {
+    left: 20%;
+    background-color: red;
+}
+
+.balloon2 {
+    left: 50%;
+    background-color: blue;
+
+    animation-duration: 8s;
+}
+
+.balloon3 {
+    left: 80%;
+    background-color: yellow;
+
+    animation-duration: 5s;
+}
+
+.balloon4 {
+    left: 10%;
+    background-color: purple;
+
+    animation-duration: 7s;
+}
+
+.balloon5 {
+    left: 35%;
+    background-color: green;
+
+    animation-duration: 9s;
+}
+
+.balloon6 {
+    left: 65%;
+    background-color: orange;
+
+    animation-duration: 6s;
+}
+
+@keyframes wobble {
+
+    0% {
+        transform: rotate(-3deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
+    }
+
+    100% {
+        transform: rotate(-3deg);
+    }
+
+}
+
+@keyframes bgChange {
+
+    0% {
+        background: pink;
+    }
+
+    50% {
+        background: skyblue;
+    }
+
+    100% {
+        background: lightyellow;
+    }
+
+}
+
+@keyframes glow {
+
+    from {
+        text-shadow:
+            0 0 5px pink,
+            0 0 10px hotpink,
+            0 0 20px deeppink;
+    }
+
+    to {
+        text-shadow:
+            0 0 10px pink,
+            0 0 25px hotpink,
+            0 0 40px deeppink;
+    }
+
+}
+
+@keyframes bgMove {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+.balloon1 { animation-delay: 0s; }
+.balloon2 { animation-delay: 1s; }
+.balloon3 { animation-delay: 2s; }
+.balloon4 { animation-delay: 0.5s; }
+.balloon5 { animation-delay: 1.5s; }
+.balloon6 { animation-delay: 2.5s; }
